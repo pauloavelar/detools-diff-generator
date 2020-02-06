@@ -1,7 +1,8 @@
 import detools
 import os
 
-files = [f for f in os.listdir('files') if f != '.gitkeep']
+exclusions = ['.DS_Store', '.gitkeep']
+files = [f for f in os.listdir('files') if f not in exclusions]
 
 def get_filename(f):
   return os.path.splitext(f)[0]
